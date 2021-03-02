@@ -36,13 +36,13 @@ export function CountdownProvider({ children }:CountdownProviderProps) {
   function resetCountdown() {
     clearTimeout(countdownTimeout);
     setIsActive(false)
-    setTime(0.1 * 60)
+    setTime(25 * 60)
     setHasFinished(false)
   }
 
   // useEffect(O que eu quero executar, quando eu quero executar)
   useEffect(() => {
-    if ( isActive && time > 0) {
+    if (isActive && time > 0) {
       countdownTimeout = setTimeout(() => {
         setTime(time - 1)
       }, 1000)
